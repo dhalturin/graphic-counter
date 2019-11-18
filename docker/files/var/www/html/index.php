@@ -2,6 +2,7 @@
 error_reporting(E_ALL & ~E_WARNING & ~E_NOTICE);
 
 if (isset($_GET['showinfo'])) {
+    var_dump($_SERVER);
     phpinfo();
     die;
 }
@@ -24,7 +25,6 @@ if (isset($_GET['migration'])) {
     }
     die;
 } elseif (isset($_GET['showall'])) {
-    var_dump($_SERVER);
     var_dump($pdo->query('select * from data')->fetchAll());
     die;
 }
