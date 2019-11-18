@@ -24,7 +24,7 @@ if (isset($_GET['migration'])) {
     }
     die;
 } elseif (isset($_GET['showall'])) {
-    var_sump($_SERVER);
+    var_dump($_SERVER);
     var_dump($pdo->query('select * from data')->fetchAll());
     die;
 }
