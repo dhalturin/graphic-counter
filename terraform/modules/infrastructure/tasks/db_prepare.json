@@ -1,0 +1,22 @@
+[
+  {
+    "name": "migration",
+    "image": "${app_image}",
+    "command": ["sh", "-c", "php prepare.php; sleep infinity"],
+    "memory": 300,
+    "environment": [
+      {
+        "name": "PGSQL_DSN",
+        "value": "${pgsql_dsn}"
+      },
+      {
+        "name": "PGSQL_USER",
+        "value": "${pgsql_user}"
+      },
+      {
+        "name": "PGSQL_PASS",
+        "value": "${pgsql_pass}"
+      }
+    ]
+  }
+]
