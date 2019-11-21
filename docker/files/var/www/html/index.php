@@ -43,8 +43,8 @@ try {
     die('query error: ' . $e->getMessage() . ' - ' . $q);
 }
 
-$all = $pdo->query('select count(distinct data_ip) from data')->fetch()[0];
-$today = $pdo->query('select count(distinct data_ip) from data where data_time > ' . strtotime('now 00:00:00'))->fetch()[0];
+$all = $pdo->query('select count(data_ip) from data')->fetch()[0];
+$today = $pdo->query('select count(data_ip) from data where data_time > ' . strtotime('now 00:00:00'))->fetch()[0];
 $unique = $pdo->query('select count(distinct data_ip) from data where data_time > ' . strtotime('now 00:00:00'))->fetch()[0];
 
 function addSpace($input) {
